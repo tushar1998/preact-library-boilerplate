@@ -1,5 +1,6 @@
 import { render } from "preact/compat";
 import App from "./App";
+import { h } from "preact";
 
 const initialize = (): void => {
   const shadowHost = document.createElement("preact-library");
@@ -7,7 +8,7 @@ const initialize = (): void => {
 
   document.body.insertAdjacentElement("afterend", shadowHost);
 
-  render(<App />, shadowDom as unknown as HTMLElement);
+  render(h(App, {}), shadowDom as unknown as HTMLElement);
 };
 
 export { initialize };
