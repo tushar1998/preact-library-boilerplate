@@ -1,0 +1,9 @@
+{
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "bracketSameLine": true,
+  "endOfLine": "lf",
+  "trailingComma": "none"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "preact-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "rollup -cw --configPlugin @rollup/plugin-typescript",
+    "test": "jest",
+    "commit": "cz",
+    "prepare": "husky install",
+    "lint": "eslint --fix",
+    "format": "prettier --write"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "preact": "^10.16.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/preact": "3.2.3",
+    "@types/node": "^20.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.44.0",
+    "eslint-config-preact": "^1.3.0",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "jest": "26.6.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "rollup": "^3.26.2",
+    "ts-jest": "26.5.5",
+    "ts-node": "10.9.1",
+    "tslib": "^2.6.0",
+    "typescript": "^4.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
