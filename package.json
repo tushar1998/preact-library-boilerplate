@@ -1,6 +1,6 @@
 {
-  "name": "preact-library",
-  "version": "1.0.0",
+  "name": "preact-library-boilerplate",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -12,7 +12,8 @@
     "commit": "cz",
     "prepare": "husky install",
     "lint": "eslint --fix",
-    "format": "prettier --write"
+    "format": "prettier --write",
+    "release": "commit-and-tag-version"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -35,6 +36,7 @@
     "@testing-library/preact": "3.2.3",
     "@types/node": "^20.4.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "commit-and-tag-version": "^11.2.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.44.0",
@@ -57,5 +59,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tushar1998/preact-library-boilerplate.git"
   }
 }
