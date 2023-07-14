@@ -2,10 +2,11 @@ import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { type RollupOptions } from "rollup";
 // import terser from "@rollup/plugin-terser";
 
-export default {
-  input: "./src/index.ts",
+const config: RollupOptions = {
+  input: "./src/index.tsx",
   output: [
     {
       file: "./lib/index.js",
@@ -29,6 +30,8 @@ export default {
     nodeResolve(),
     commonjs(),
     typescript({ tsconfig: "./tsconfig.build.json" })
-    // terser(),
+    // terser()
   ]
 };
+
+export default config;
