@@ -1,5 +1,6 @@
 import { type FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
+import styles from "./App.module.scss";
 
 const Counter: FunctionComponent = () => {
   const [count, setCount] = useState(0);
@@ -8,7 +9,7 @@ const Counter: FunctionComponent = () => {
   };
 
   return (
-    <div>
+    <div className={styles.counter}>
       Current value: {count}
       <button onClick={increment}>Increment</button>
     </div>

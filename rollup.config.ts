@@ -3,7 +3,42 @@ import alias from "@rollup/plugin-alias";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import { type RollupOptions } from "rollup";
+import postcss from "rollup-plugin-postcss";
 // import terser from "@rollup/plugin-terser";
+
+const appendStyles = (css: string): string => {
+  return `const styleFunction = () => {
+  const shadowHost = document.getElementById("preact-library");
+
+  const findAndAppend = (rootElement, element) => {
+    const findStyle = rootElement.getElementById("preact-library-style");
+    if(!findStyle){
+      const style = document.createElement("style");
+      style.setAttribute("type", "text/css");
+      style.setAttribute("id", "preact-library-style");
+      style.innerHTML = ${css};
+      if(element){
+        document[element].appendChild(style);
+        return;
+      }
+      rootElement.prepend(style);
+      return;
+    }
+    findStyle.innerHTML = findStyle.innerHTML.concat(${css});
+    return;
+  }
+
+  if(!shadowHost) {
+    findAndAppend(document, "head");
+    return;
+  }
+
+  const shadowRoot = shadowHost.shadowRoot;
+  findAndAppend(shadowRoot);
+};
+
+document.addEventListener("DOMContentLoaded", styleFunction);`;
+};
 
 const config: RollupOptions = {
   input: "./src/index.tsx",
@@ -29,7 +64,13 @@ const config: RollupOptions = {
     }),
     nodeResolve(),
     commonjs(),
-    typescript({ tsconfig: "./tsconfig.build.json" })
+    typescript({ tsconfig: "./tsconfig.build.json" }),
+    postcss({
+      modules: true,
+      autoModules: true,
+      extensions: [".css", ".scss", ".module.scss", ".module.css"],
+      inject: appendStyles
+    })
     // terser()
   ]
 };

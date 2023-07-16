@@ -8,21 +8,23 @@
   "license": "ISC",
   "scripts": {
     "dev": "rollup -cw --configPlugin @rollup/plugin-typescript",
+    "build": "rollup -c --configPlugin @rollup/plugin-typescript",
     "test": "jest",
     "commit": "cz",
     "prepare": "husky install",
     "lint": "eslint --fix",
     "format": "prettier --write",
-    "release": "commit-and-tag-version"
+    "release": "commit-and-tag-version",
+    "lint:style": "stylelint src/**/*.{css,scss}"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ]
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{css,scss}": "stylelint --fix src/**/*.{css,scss}",
+    "*": "prettier --write"
   },
   "dependencies": {
-    "preact": "^10.16.0"
+    "preact": "^10.16.0",
+    "stylelint-config-standard-scss": "^10.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -35,17 +37,30 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/preact": "3.2.3",
     "@types/node": "^20.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "commit-and-tag-version": "^11.2.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.44.0",
+    "eslint": "^8.45.0",
     "eslint-config-preact": "^1.3.0",
+    "eslint-config-standard-with-typescript": "^36.1.0",
     "eslint-plugin-compat": "^4.1.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "26.6.3",
     "lint-staged": "^13.2.3",
+    "postcss": "^8.4.26",
     "prettier": "^3.0.0",
     "rollup": "^3.26.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.63.6",
+    "stylelint": "^15.10.1",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
     "ts-jest": "26.5.5",
     "ts-node": "10.9.1",
     "tslib": "^2.6.0",
