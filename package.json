@@ -1,6 +1,6 @@
 {
   "name": "@tushar1998/react-library",
-  "version": "0.0.0",
+  "version": "0.0.0-beta.0",
   "description": "A react library for building your reusable components",
   "main": "index.js",
   "keywords": [
