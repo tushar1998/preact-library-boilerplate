@@ -1,6 +1,6 @@
 {
   "name": "@tushar6698/react-library2",
-  "version": "0.0.0-beta.0",
+  "version": "0.0.1-beta.0",
   "description": "A react library for building your reusable components",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
@@ -26,7 +26,6 @@
     "*": "prettier --write"
   },
   "dependencies": {
-    "@emotion/css": ">=11",
     "cross-env": "^7.0.3",
     "react": ">=18"
   },
