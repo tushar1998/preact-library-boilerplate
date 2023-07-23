@@ -37,5 +37,5 @@ module.exports = {
       }
     }
   ],
-  ignorePatterns: ["node_modules", "dist", "lib", "build"]
+  ignorePatterns: ["node_modules", "dist", "lib", "build", ".npmignore"]
 };

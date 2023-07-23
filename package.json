@@ -2,7 +2,8 @@
   "name": "@tushar6698/react-library2",
   "version": "0.0.0-beta.0",
   "description": "A react library for building your reusable components",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
   "keywords": [
     "react",
     "components",
@@ -11,8 +12,8 @@
   "author": "mistry.tushar98@gmail.com",
   "license": "ISC",
   "scripts": {
-    "dev": "rollup -cw --configPlugin @rollup/plugin-typescript",
-    "build": "rollup -c --configPlugin @rollup/plugin-typescript",
+    "dev": "cross-env NODE_ENV=development rollup -cw --configPlugin @rollup/plugin-typescript",
+    "build": "cross-env NODE_ENV=production rollup -c --configPlugin @rollup/plugin-typescript",
     "test": "jest",
     "commit": "cz",
     "prepare": "husky install",
@@ -25,7 +26,13 @@
     "*": "prettier --write"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "@emotion/css": ">=11",
+    "cross-env": "^7.0.3",
+    "react": ">=18"
+  },
+  "peerDependencies": {
+    "@emotion/css": ">=11",
+    "react": ">=18"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -55,6 +62,7 @@
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "rollup": "^3.26.2",
+    "rollup-plugin-delete": "^2.0.0",
     "ts-jest": "^29.1.1",
     "ts-node": "10.9.1",
     "tslib": "^2.6.0",
@@ -68,5 +76,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tushar1998/react-library-boilerplate.git"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "default": "./lib/index-esm.js",
+      "node": "./lib/index.js",
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/index-esm.js",
+      "require": "./lib/index.js"
+    }
   }
 }
