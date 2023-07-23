@@ -22,8 +22,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "18",
-      pragma: "h"
+      version: "18"
     }
   },
   overrides: [

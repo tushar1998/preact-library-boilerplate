@@ -1,10 +1,14 @@
 {
-  "name": "preact-library-boilerplate",
+  "name": "react-library-boilerplate",
   "version": "0.0.0",
-  "description": "",
+  "description": "A react library for building your reusable components",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "components",
+    "boilerplate"
+  ],
+  "author": "mistry.tushar98@gmail.com",
   "license": "ISC",
   "scripts": {
     "dev": "rollup -cw --configPlugin @rollup/plugin-typescript",
@@ -14,17 +18,14 @@
     "prepare": "husky install",
     "lint": "eslint --fix",
     "format": "prettier --write",
-    "release": "commit-and-tag-version",
-    "lint:style": "stylelint src/**/*.{css,scss}"
+    "release": "commit-and-tag-version"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{css,scss}": "stylelint --fix src/**/*.{css,scss}",
     "*": "prettier --write"
   },
   "dependencies": {
-    "preact": "^10.16.0",
-    "stylelint-config-standard-scss": "^10.0.0"
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -34,34 +35,27 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
-    "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/preact": "3.2.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "^20.4.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "commit-and-tag-version": "^11.2.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.45.0",
-    "eslint-config-preact": "^1.3.0",
     "eslint-config-standard-with-typescript": "^36.1.0",
-    "eslint-plugin-compat": "^4.1.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "26.6.3",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "lint-staged": "^13.2.3",
-    "postcss": "^8.4.26",
     "prettier": "^3.0.0",
     "rollup": "^3.26.2",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.63.6",
-    "stylelint": "^15.10.1",
-    "stylelint-config-recommended": "^13.0.0",
-    "stylelint-config-standard": "^34.0.0",
-    "ts-jest": "26.5.5",
+    "ts-jest": "^29.1.1",
     "ts-node": "10.9.1",
     "tslib": "^2.6.0",
     "typescript": "^4.9.5"
@@ -73,6 +67,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tushar1998/preact-library-boilerplate.git"
+    "url": "https://github.com/tushar1998/react-library-boilerplate.git"
   }
 }
