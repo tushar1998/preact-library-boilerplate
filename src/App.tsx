@@ -6,6 +6,8 @@ const Counter: FC = () => {
     setCount(count + 1);
   };
 
+  console.log("Change for test cases");
+
   return (
     <div>
       Current value: {count}
