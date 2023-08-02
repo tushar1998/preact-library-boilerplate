@@ -16,3 +16,23 @@ A typescript to quickly start development for your react sdk or library
 - next - developing experimental features and RnD branch
 - beta - developing and testing stage for the next release
 - master - stable version for library
+
+### Versioning and Releasing
+
+- Current Version -> v0.0.1-beta.0
+
+  - Bump Version to v0.0.1
+
+    ```zsh
+    npm run release
+    ```
+
+  - Bump Version to v0.0.1-beta.1
+
+    ```zsh
+    npm run release -- --prelease beta
+    ```
+
+    ```zsh
+    npm run release -- --prelease
+    ```
