@@ -9,7 +9,9 @@ const Counter: FC = () => {
   return (
     <div>
       Current value: {count}
-      <button onClick={increment}>Increment</button>
+      <button onClick={increment} data-testid="increment">
+        Increment
+      </button>
     </div>
   );
 };
