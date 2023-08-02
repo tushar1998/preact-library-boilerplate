@@ -2,8 +2,8 @@ name: "test"
 
 on:
   pull_request:
-    types: [opened]
-    branches: [main master next beta]
+    branches:
+      - master
 
 jobs:
   build:
