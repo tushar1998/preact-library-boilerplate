@@ -22,8 +22,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "18",
-      pragma: "h"
+      version: "18"
     }
   },
   overrides: [
@@ -38,5 +37,5 @@ module.exports = {
       }
     }
   ],
-  ignorePatterns: ["node_modules", "dist", "lib", "build"]
+  ignorePatterns: ["node_modules", "dist", "lib", "build", ".npmignore"]
 };
